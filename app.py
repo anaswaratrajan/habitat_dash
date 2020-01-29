@@ -59,9 +59,7 @@ Humidity_layout = html.Div([
         marker_color = hum_d['hum'],
         ))
     ),
-    html.Div(id='Health-content'),
-    html.Br(),
-    dcc.Link('Go back to actions_page', href='/')
+    html.Br()
 ])
 
 
