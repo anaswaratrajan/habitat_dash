@@ -1,1 +1,1 @@
-# bushfire_prevention
+# api gives humidity map of the world.
