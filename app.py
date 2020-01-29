@@ -33,18 +33,6 @@ for i in l:
 hum_d = pd.DataFrame(ll, columns = col)
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
-meta_tags=[
-    {"name": "viewport", "content": "width=device-width, initial-scale=1.0"}
-])
-
-
-def output_(input_value):
-    try:
-        return ss
-    except:
-        return 'enter a valid number'
-
 app = dash.Dash(
     __name__,
     meta_tags=[
@@ -59,16 +47,6 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
 ])
-
-@app.callback(
-    dash.dependencies.Output('container-button-basic', 'children'),
-     [dash.dependencies.Input('button', 'n_clicks')],
-    [dash.dependencies.State('input-box', 'value')])
-def update_output_div(clicks,value):
-    s=output_(value)
-    return s
-
-
 
 Humidity_layout = html.Div([
     html.H1('Humidity'),
@@ -86,10 +64,6 @@ Humidity_layout = html.Div([
     dcc.Link('Go back to actions_page', href='/')
 ])
 
-@app.callback(dash.dependencies.Output('Health-content', 'children'),
-              [dash.dependencies.Input('Health-radios', 'value')])
-def page_2_radios(value):
-    return 'You have selected "{}"'.format(value)
 
 
 # Update the actions_page
