@@ -1,4 +1,4 @@
 # Habitat_api for prevention of bushfires
-Api gives humidity map of the world. 
+Gives humidity map of the world. 
 
 
